@@ -1,16 +1,17 @@
 
 import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React , { useState } from 'react';
 import Alert from './components/Alert';
-import {
+// react does work well with react router that why i am removing all router items
+/* import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
-} from "react-router-dom";
+
+} from "react-router-dom"; */
 
 function App() {
  
@@ -67,8 +68,15 @@ function App() {
 
   return (
    <> 
-   
 
+     <Navbar  title="TextUtils"  abouttext="About" mode={mode} toggleMode={toggleMode} />
+     <Alert alert={alert} />
+
+     <div className="container my-3">
+    <TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />
+     </div>
+
+ {/*
    <BrowserRouter>
     <Navbar  title="TextUtils"  abouttext="About" mode={mode} toggleMode={toggleMode} />
 
@@ -76,11 +84,12 @@ function App() {
    <div className="container my-3">
     <Routes>
       {/** its recommended to use exact  */}
-       <Route eaxct path="/about" element={<About />} />
+      {/* <Route eaxct path="/about" element={<About />} />
        <Route exact path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />} />
      </Routes>
      </div>
    </BrowserRouter>
+  */}
    
  </>
   );
@@ -88,5 +97,4 @@ function App() {
 
 export default App;
 
-
-
+// npm run build
